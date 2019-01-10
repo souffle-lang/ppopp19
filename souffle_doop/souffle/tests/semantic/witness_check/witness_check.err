@@ -1,0 +1,25 @@
+Error: Witness problem: argument grounded by an aggregator's inner scope is used ungrounded in outer scope in file witness_check.dl at line 31
+a(x,y) :- y = count : { c(x,_) }.
+--^-------------------------------
+Error: Witness problem: argument grounded by an aggregator's inner scope is used ungrounded in outer scope in file witness_check.dl at line 32
+a(x,y) :- y = sum z : { c(x,z) }.
+--^-------------------------------
+Error: Witness problem: argument grounded by an aggregator's inner scope is used ungrounded in outer scope in file witness_check.dl at line 33
+a(x,y) :- y = max z : { c(x,z) }.
+--^-------------------------------
+Error: Witness problem: argument grounded by an aggregator's inner scope is used ungrounded in outer scope in file witness_check.dl at line 34
+a(x,y) :- y = min z : { c(x,z) }.
+--^-------------------------------
+Error: Witness problem: argument grounded by an aggregator's inner scope is used ungrounded in outer scope in file witness_check.dl at line 37
+a(x,y) :- b(x), y = max z : { !d(r), !e(m), c(x,z), m = sum j : { c(r,j) } }.
+---------------------------------^--------------------------------------------
+Error: Witness problem: argument grounded by an aggregator's inner scope is used ungrounded in outer scope in file witness_check.dl at line 40
+a(x,y) :- y = sum z : { c(z,m), m = count : { e(x) } }.
+--^-----------------------------------------------------
+Error: Witness problem: argument grounded by an aggregator's inner scope is used ungrounded in outer scope in file witness_check.dl at line 43
+a(x,y) :- b(x), x = sum z : { c(z,y), !c(y,m), z = sum j : { c(j,m) } }.
+----^--------------------------------------------------------------------
+Error: Witness problem: argument grounded by an aggregator's inner scope is used ungrounded in outer scope in file witness_check.dl at line 43
+a(x,y) :- b(x), x = sum z : { c(z,y), !c(y,m), z = sum j : { c(j,m) } }.
+-------------------------------------------^-----------------------------
+8 errors generated, evaluation aborted
