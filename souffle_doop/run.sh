@@ -38,6 +38,10 @@ fi
 # Header
 echo "benchmark,datastructure,threads,time,memory" >> "$RESULTS"
 
+# OpenMP CPU affinity
+# CHANGE THIS FOR YOUR NUMBER OF CORES
+export GOMP_CPU_AFFINITY="0-31"
+
 for b in "${BENCHES[@]}"; do
     echo "Running benchmark $b"
 
